@@ -8,7 +8,8 @@ namespace Services
         {
             List<Camera> cameras = new List<Camera>();
 
-            var lines = File.ReadAllLines(@"..\data\cameras-defb.csv").Skip(1);
+            var path = Path.Combine("..", "..", "..", "..", "data", "cameras-defb.csv");
+            var lines = File.ReadAllLines(path).Skip(1);
 
             foreach (var line in lines)
             {

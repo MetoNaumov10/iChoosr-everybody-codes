@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{EE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{2C5BED3C-119C-4EF3-9D15-9B9ECCC1FCBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraSearch", "CameraSearch\CameraSearch.csproj", "{2910C8FF-412C-4F17-8514-E50EFE5811DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{2C5BED3C-119C-4EF3-9D15-9B9ECCC1FCBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C5BED3C-119C-4EF3-9D15-9B9ECCC1FCBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C5BED3C-119C-4EF3-9D15-9B9ECCC1FCBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2910C8FF-412C-4F17-8514-E50EFE5811DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2910C8FF-412C-4F17-8514-E50EFE5811DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2910C8FF-412C-4F17-8514-E50EFE5811DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2910C8FF-412C-4F17-8514-E50EFE5811DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{4753440B-D5A9-4E8C-B9C7-8D9D2D17AB12} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{EE31E433-05AF-453F-9621-3A419258C100} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{2C5BED3C-119C-4EF3-9D15-9B9ECCC1FCBC} = {EE31E433-05AF-453F-9621-3A419258C100}
+		{2910C8FF-412C-4F17-8514-E50EFE5811DA} = {4753440B-D5A9-4E8C-B9C7-8D9D2D17AB12}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {456A866B-D343-47C5-8812-AD23ABF604B8}
