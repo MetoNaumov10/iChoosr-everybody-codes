@@ -191,4 +191,41 @@
   </main>
 </body>
 
+<script>
+    $(document).ready(function () {
+        
+        const apiUrl = "https://localhost:7286/Cameras";
+
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(data => {
+                data.forEach((camera, index) => {
+                    const number = index + 1;
+
+                    // Categorize into columns
+                    const row = `
+                        <tr>
+                            <td>${number}</td>
+                            <td>${camera.name}</td>
+                            <td>${camera.latitude}</td>
+                            <td>${camera.longitude}</td>
+                        </tr>`;
+
+                    if (number % 3 === 0 && number % 5 !== 0) {
+                        $("#column3 tbody").append(row);
+                    } else if (number % 3 !== 0 && number % 5 === 0) {
+                        $("#column5 tbody").append(row);
+                    } else if (number % 3 === 0 && number % 5 === 0) {
+                        $("#column15 tbody").append(row);
+                    } else if (number % 3 !== 0 && number % 5 !== 0) {
+                        $("#columnOther tbody").append(row);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error("Error loading camera data:", error);
+            });
+    });
+</script>
+
 </html>
