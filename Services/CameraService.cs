@@ -1,4 +1,5 @@
 ﻿using Entity;
+using System.Globalization;
 
 namespace Services
 {
@@ -8,8 +9,9 @@ namespace Services
         {
             List<Camera> cameras = new List<Camera>();
 
-            var path = Path.Combine("..", "..", "..", "..", "data", "cameras-defb.csv");
-            var lines = File.ReadAllLines(path).Skip(1);
+            var relativePath = Path.Combine(AppContext.BaseDirectory, @"..\..\..\..\data\cameras-defb.csv");
+            var fullPath = Path.GetFullPath(relativePath);
+            var lines = File.ReadAllLines(fullPath).Skip(1);
 
             foreach (var line in lines)
             {
@@ -19,15 +21,12 @@ namespace Services
 
                 if (parts.Length != 3) continue;
 
-                if (double.TryParse(parts[1], out double lat) && double.TryParse(parts[2], out double lng))
-                {
-                    cameras.Add(new Camera
-                    {
-                        Name = parts[0].Trim(),
-                        Latitude = lat,
-                        Longitude = lng
-                    });
-                }
+                cameras.Add(new Camera
+                { 
+                    Name = parts[0].Trim(),
+                    Latitude = double.Parse(parts[1], CultureInfo.InvariantCulture),
+                    Longitude = double.Parse(parts[2], CultureInfo.InvariantCulture)
+                });
             }
 
             return cameras;
