@@ -6,7 +6,7 @@ namespace CameraSearch;
 public class Program
 {
 
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         var services = new ServiceCollection();
         services.AddScoped<ICameraService, CameraService>();
