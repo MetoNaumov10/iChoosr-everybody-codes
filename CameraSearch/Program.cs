@@ -39,9 +39,9 @@ public class Program
         else
         {
             if (matches != null)
-                foreach (var name in matches)
+                foreach (var camera in matches)
                 {
-                    Console.WriteLine($"- {name.Name} | {name.Latitude} | {name.Longitude}");
+                    Console.WriteLine($"- {camera.Number} | {camera.Name} | {camera.Latitude} | {camera.Longitude}");
                 }
         }
     }

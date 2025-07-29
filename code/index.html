@@ -220,7 +220,6 @@
             .then(res => res.json())
             .then(data => {
                 data.forEach((camera, index) => {
-                    const number = index + 1;
 
                     L.marker([camera.latitude, camera.longitude], { icon: cameraIcon })
                         .addTo(map)
@@ -229,19 +228,19 @@
                     // Categorize into columns
                     const row = `
                         <tr>
-                            <td>${number}</td>
+                            <td>${camera.number}</td>
                             <td>${camera.name}</td>
                             <td>${camera.latitude}</td>
                             <td>${camera.longitude}</td>
                         </tr>`;
 
-                    if (number % 3 === 0 && number % 5 !== 0) {
+                    if (camera.number % 3 === 0 && camera.number % 5 !== 0) {
                         $("#column3 tbody").append(row);
-                    } else if (number % 3 !== 0 && number % 5 === 0) {
+                    } else if (camera.number % 3 !== 0 && camera.number % 5 === 0) {
                         $("#column5 tbody").append(row);
-                    } else if (number % 3 === 0 && number % 5 === 0) {
+                    } else if (camera.number % 3 === 0 && camera.number % 5 === 0) {
                         $("#column15 tbody").append(row);
-                    } else if (number % 3 !== 0 && number % 5 !== 0) {
+                    } else if (camera.number % 3 !== 0 && camera.number % 5 !== 0) {
                         $("#columnOther tbody").append(row);
                     }
                 });
