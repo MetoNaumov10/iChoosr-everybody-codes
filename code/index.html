@@ -234,13 +234,16 @@
                             <td>${camera.longitude}</td>
                         </tr>`;
 
-                    if (camera.number % 3 === 0 && camera.number % 5 !== 0) {
-                        $("#column3 tbody").append(row);
-                    } else if (camera.number % 3 !== 0 && camera.number % 5 === 0) {
-                        $("#column5 tbody").append(row);
-                    } else if (camera.number % 3 === 0 && camera.number % 5 === 0) {
+                    if (camera.number % 3 === 0 && camera.number % 5 === 0) {
                         $("#column15 tbody").append(row);
-                    } else if (camera.number % 3 !== 0 && camera.number % 5 !== 0) {
+                    }
+                    else if (camera.number % 3 === 0) {
+                        $("#column3 tbody").append(row);
+                    }
+                    else if (camera.number % 5 === 0) {
+                        $("#column5 tbody").append(row);
+                    }
+                    else{
                         $("#columnOther tbody").append(row);
                     }
                 });
