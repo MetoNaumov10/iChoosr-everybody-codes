@@ -23,7 +23,7 @@ public class Program
             return;
         }
 
-        string searchTerm = args[nameArgIndex + 1];
+        var searchTerm = args[nameArgIndex + 1];
 
         // Search for matches (case-insensitive)
         var matches = cameraService?.LoadCameras()
@@ -38,11 +38,11 @@ public class Program
         }
         else
         {
-            if (matches != null)
-                foreach (var camera in matches)
-                {
-                    Console.WriteLine($"- {camera.Number} | {camera.Name} | {camera.Latitude} | {camera.Longitude}");
-                }
+            if (matches == null) return;
+            foreach (var camera in matches)
+            {
+                Console.WriteLine($"- {camera.Number} | {camera.Name} | {camera.Latitude} | {camera.Longitude}");
+            }
         }
     }
 }

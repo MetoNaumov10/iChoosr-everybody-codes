@@ -8,7 +8,7 @@ namespace Services
     {
        public List<Camera> LoadCameras()
         {
-            List<Camera> cameras = new List<Camera>();
+            var cameras = new List<Camera>();
 
             var relativePath = Path.Combine(AppContext.BaseDirectory, @"..\..\..\..\data\cameras-defb.csv");
             var fullPath = Path.GetFullPath(relativePath);
@@ -22,8 +22,8 @@ namespace Services
 
                 if (parts.Length != 3) continue;
 
-                Match match = Regex.Match(parts[0], @"\d+");
-                string cameraNumber = "";
+                var match = Regex.Match(parts[0], @"\d+");
+                var cameraNumber = "";
 
                 if (match.Success)
                 {
